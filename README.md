@@ -1,5 +1,4 @@
-## Coursera-Getting-and-Cleaning-Data-Assignment
-## submission of data cleaning assignment of coursera
+## Coursera-Getting-and-Cleaning-Data-Assignment: Project-submission of data cleaning assignment of coursera
 ## title: "codebook_run_Analysis"
 author: "Indradwip Dutta"
 
@@ -57,7 +56,7 @@ The Data Sample of one of the  above datasets is given in the code book of this 
 Datasets in y and Z direction exists for all the subjects(Subject ID or volunteer IDs are 1,2,3,4...etc.) who took part in sharing the Samsing SII data from their activities
 
 
-####2.The Derived Variables,derived from the raw signals above by applying the 561 listed functions
+#### 2.The Derived Variables,derived from the raw signals above by applying the 561 listed functions
 
 
 #### However these Datasets as mentioned above have been used to derive further Datasets called 
