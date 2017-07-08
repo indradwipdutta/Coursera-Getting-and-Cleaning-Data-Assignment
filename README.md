@@ -1,14 +1,7 @@
-# Coursera-Getting-and-Cleaning-Data-Assignment
-submission of data cleaning assignment of coursera
-title: "codebook_run_Analysis"
+## Coursera-Getting-and-Cleaning-Data-Assignment
+## submission of data cleaning assignment of coursera
+## title: "codebook_run_Analysis"
 author: "Indradwip Dutta"
-
-output:
-  html_document: default
-  pdf_document: default
-  word_document: default
----
-
 
 ## Script "run_Analysis.R" Readme File
 
@@ -16,7 +9,7 @@ output:
 
 These available datasets include the following:
 
-####1.The Raw inertial signals taken for every volunteer(subject) participating in the data collection exercise of human activities.The signals are collected at a sampling size of 128 signals per record at 50 HZ frequency.These signals are present in the datasets as below
+#### 1.The Raw inertial signals taken for every volunteer(subject) participating in the data collection exercise of human activities.The signals are collected at a sampling size of 128 signals per record at 50 HZ frequency.These signals are present in the datasets as below
                   
 ### For Testing purpose(data randomly taken for testing or training from raw signals collected)
  
@@ -234,42 +227,45 @@ The 561 functions used to derive the variables in X_test,Y_test,X_train,Y_train 
     
 
 
+### In the "run_analysis.R" script,the data for Test and Training has been combined as below
 
-
-
-###In the "run_analysis.R" script,the data for Test and Training has been combined as below
-
-####note:plyr package is a prerequisite and please run 
-####install.packages("plyr") for running the code "run_analysis.R"
+#### note:plyr package is a prerequisite and please run 
+#### install.packages("plyr") for running the code "run_analysis.R"
 
 
 1. The test data has been combined to form a Dataset as below.The first two columns are "Subject" and "Activity" respectively and the rest are all the calculations derived from 561 functions mentioned above.This variable dataset that holds this is called 
 
-####"testData"
+#### "testData"
 
 
 
 2. The training data has been combined to form a Dataset as below.The first two columns are "Subject" and "Activity" respectively respectively and the rest are all the calculations derived from 561 functions mentioned above.This variable dataset that holds this is called 
 
-####"trainData"
+#### "trainData"
 
 
 
 
 3. Finally the test and training data has been combined to form a Dataset as below.This variable dataset that hols this is called 
 
-####"combiDataset"
+#### "combiDataset"
 
 
 
 4. However,the Combined dataset as mentioned above was sub set with only the variables that calculate the mean() and the standard deviation,std() of the raw signals.The Variable Dataset that holds this new dataset is called, 
 
-####"subCombiData"
+#### "subCombiData"
 
 
 5. Further,the dataset "subCombiData" has the activity column values denoted as Activity Code.This has to be changed to actual activity itself
 This combined Dataset has the activities denoted as 1,2,3,4,5,6 which are codes for the activities as below.
 
+  1 WALKING
+  2 WALKING_UPSTAIRS
+  3 WALKING_DOWNSTAIRS
+  4 SITTING
+  5 STANDING
+  6 LAYING
 
 
 
@@ -283,14 +279,14 @@ This combined Dataset has the activities denoted as 1,2,3,4,5,6 which are codes 
     
 After doing this the final Dataset which is in the variable columns modified 
 
-####"subCombiData" 
+#### "subCombiData" 
 
 
 
 7. The subcombiData has furher been aggregated by Subject(volunteers) and then by their individual activities.The final tidy data has been collected in the dataframe variable,
 
-####"freshCombiData".
+#### "freshCombiData".
 
-##freshCombiData variable is the final data set generated within the code "run_analysis.R" of the assignment
+## freshCombiData variable is the final data set generated within the code "run_analysis.R" of the assignment
 
 ### the dataset freshCombidata has been output to a text file "tidydata.txt" that has been stored in the working directory and also uploaded in this project repo
