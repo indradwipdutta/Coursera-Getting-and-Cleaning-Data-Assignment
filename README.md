@@ -259,12 +259,12 @@ The 561 functions used to derive the variables in X_test,Y_test,X_train,Y_train 
 5. Further,the dataset "subCombiData" has the activity column values denoted as Activity Code.This has to be changed to actual activity itself
 This combined Dataset has the activities denoted as 1,2,3,4,5,6 which are codes for the activities as below.
 
-  1 WALKING
-  2 WALKING_UPSTAIRS
-  3 WALKING_DOWNSTAIRS
-  4 SITTING
-  5 STANDING
-  6 LAYING
+    1   WALKING
+    2   WALKING_UPSTAIRS
+    3   WALKING_DOWNSTAIRS
+    4   SITTING
+    5   STANDING
+    6   LAYING
 
 
 
