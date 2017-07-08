@@ -271,9 +271,9 @@ This combined Dataset has the activities denoted as 1,2,3,4,5,6 which are codes 
 
 6. Further as the column names of the final dataset is still the functions that have derived these columns from raw signals,the function names has to be denoted  with fully explained and expanded annotation.Usually 
     
-    t=time series Data or functions working on time series data
+                  t=time series Data or functions working on time series data
     
-    f=frequency series data or functions working on frequency series data
+                  f=frequency series data or functions working on frequency series data
     
   this has to be changed to time and frequency,i.e replace t by time and f by frequency in the column names.
     
