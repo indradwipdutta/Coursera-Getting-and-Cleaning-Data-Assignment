@@ -4,7 +4,7 @@ author: "Indradwip Dutta"
 
 #### the document gives details about the columns and data content of the datasets produced during the execution of "run_analysis.R" script.
 
-###The different datasets formed and modified while working out the final dataset has been explained in the "Readme.MD" file.This Code file gives details of the final updated columns(along with the Units) as in the prepared dataset named freshCombidata
+### The different datasets formed and modified while working out the final dataset has been explained in the "Readme.MD" file.This Code file gives details of the final updated columns(along with the Units) as in the prepared dataset named freshCombidata
 
 PART1. "combiDataset"<-[testData,trainData]......combination of Test and training Datasets,explained in Readme
 
@@ -18,7 +18,7 @@ PART3.  "subCombiData"<-[ change the columns "Activity" values from levels 1....
 PART4. "subCombiData" <-[ change the column names with proper full annotations,t(replace by time) and f(replace by frequency) ].....modifed dataset of PArt3 where column names have been fully aanotated by time and frequency instead of t and f
 
 
-####PART5. "freshCombiData"<-aggregate "subCombiData"[by Subject(volunteers) and then by their individual activities]........final modified dataset which aggregates the Dataset of Part4 by first Subjects and then by the activitiest hey have done
+#### PART5. "freshCombiData"<-aggregate "subCombiData"[by Subject(volunteers) and then by their individual activities]........final modified dataset which aggregates the Dataset of Part4 by first Subjects and then by the activitiest hey have done
 
 ## freshCombiData variable is the final data set generated within the code "run_analysis.R" of the assignment
 
@@ -106,4 +106,4 @@ activity :the activity codes have been explained as below
                                 4   SITTING
                                 5   STANDING
                                 6   LAYING
-the rest of the columns are actually the values of the respective functions denoted by the column names.
+the rest of the columns are actually the values of the output of respective functions denoted by the column names.
