@@ -12,19 +12,19 @@ author: "Indradwip Dutta"
 #### The primary Datasets of interest for this assignment are
 
 
-#### 1.X_test.txt.....................derived data/function values for the subjects
-#### 2.Y_test.txt.....................activity code(1 to 6) for test volunteers(subjects)
-#### 3.subject_test.txt.....................for test data Set
-#### 4.X_train.txt.....................derived data/function values for the subjects
-#### 5.Y_train.txt.....................activity code(1 to 6) for training volunteers(subjects)
-#### 6.subject_train.txt.....................for training data Set
+####    1.  X_test.txt.....................derived data/function values for the subjects
+####    2.  Y_test.txt.....................activity code(1 to 6) for test volunteers(subjects)
+####    3.  subject_test.txt.....................for test data Set
+####    4.  X_train.txt.....................derived data/function values for the subjects
+####    5.  Y_train.txt.....................activity code(1 to 6) for training volunteers(subjects)
+####    6.  subject_train.txt.....................for training data Set
 
 #### 7."activity_labesl.txt".....................The detailed labels of the activity codes 
 #### 8."features.txt"........................these are the functions which have processed the original inertial signals and are the initial column names of combined dtataset
 
 ###  For a background of these datasets please refer to Appendix of Data Sets' Background below
 
-### -------------------------------------------PART1-----------------------------------------------
+### -------------------------------------------PART1------------------------------------------------------
 
 ### In the "run_analysis.R" script,the data for Test and Training has been combined as below
 
@@ -45,13 +45,13 @@ author: "Indradwip Dutta"
 #### "combiDataset"<-[testData,trainData]
 
 
-### -------------------------------------------PART2-------------------------------------------------
+### -------------------------------------------PART2------------------------------------------------------
 
 4. However,the Combined dataset as mentioned above was sub set with only the variables that calculate the mean() and the standard deviation,std() of the raw signals.The Variable Dataset that holds this new dataset is called, 
 
 #### "subCombiData"<-subset of "combiDataset" [columns with mean(),columns with std()]
 
-### -------------------------------------------PART3-------------------------------------------------
+### -------------------------------------------PART3------------------------------------------------------
 
 5. Further,the dataset "subCombiData" has the activity column values denoted as Activity Code.This has to be changed to actual activity itself
 This combined Dataset has the activities denoted as 1,2,3,4,5,6 which are codes for the activities as below.
@@ -66,7 +66,7 @@ This combined Dataset has the activities denoted as 1,2,3,4,5,6 which are codes 
 
 #### "subCombiData"<-[ change the columns "Activity" values from levels 1....6 to WALKING.........LAYING ]
 
-### -------------------------------------------PART4-------------------------------------------------
+### -------------------------------------------PART4------------------------------------------------------
 
 6. Further as the column names of the final dataset is still the functions that have derived these columns from raw signals,the function names has to be denoted  with fully explained and expanded annotation.Usually 
     
@@ -80,7 +80,7 @@ After doing this the final Dataset which is in the variable columns modified
 
 #### "subCombiData" <-[ change the column names with proper full annotations,t(replace by time) and f(replace by frequency) ]
 
-### -------------------------------------------PART5-------------------------------------------------
+### -------------------------------------------PART5------------------------------------------------------
 
 
 7. The subcombiData has furher been aggregated by Subject(volunteers) and then by their individual activities.The final tidy data has been collected in the dataframe variable,
@@ -91,7 +91,7 @@ After doing this the final Dataset which is in the variable columns modified
 
 ### the dataset freshCombidata has been output to a text file "tidydata.txt" that has been stored in the working directory and also uploaded in this project repo
 
-### ___________________________________________________________________________________________________________________________________________
+### _______________________________________________________________________________________________________________________________
 
 ##  Appendix Data Sets' Background
 
