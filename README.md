@@ -9,15 +9,15 @@ author: "Indradwip Dutta"
 #### install.packages("plyr") for running the code "run_analysis.R"
 
 
-#### The primary Datasets of interest for this assignment are
+### The working Datasets of interest for this assignment are
 
 
-####    1.  X_test.txt.....................derived data/function values for the subjects
-####    2.  Y_test.txt.....................activity code(1 to 6) for test volunteers(subjects)
-####    3.  subject_test.txt.....................for test data Set
-####    4.  X_train.txt.....................derived data/function values for the subjects
-####    5.  Y_train.txt.....................activity code(1 to 6) for training volunteers(subjects)
-####    6.  subject_train.txt.....................for training data Set
+#####    1.  X_test.txt.....................derived data/function values for the subjects
+#####    2.  Y_test.txt.....................activity code(1 to 6) for test volunteers(subjects)
+#####    3.  subject_test.txt.....................for test data Set
+#####    4.  X_train.txt.....................derived data/function values for the subjects
+#####    5.  Y_train.txt.....................activity code(1 to 6) for training volunteers(subjects)
+#####    6.  subject_train.txt.....................for training data Set
 
 #### 7."activity_labesl.txt".....................The detailed labels of the activity codes 
 #### 8."features.txt"........................these are the functions which have processed the original inertial signals and are the initial column names of combined dtataset
@@ -91,7 +91,7 @@ After doing this the final Dataset which is in the variable columns modified
 
 ### the dataset freshCombidata has been output to a text file "tidydata.txt" that has been stored in the working directory and also uploaded in this project repo
 
-### _______________________________________________________________________________________________________________________________
+### _____________________________________________________________________________________________________________
 
 ##  Appendix Data Sets' Background
 
