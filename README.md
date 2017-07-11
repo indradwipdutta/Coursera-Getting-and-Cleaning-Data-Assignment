@@ -1,12 +1,103 @@
 ## Coursera-Getting-and-Cleaning-Data-Assignment: Project-submission of data cleaning assignment of coursera
-## title: "codebook_run_Analysis"
+## title: "Introduction_"run_Analysis.R" code
+## Script "run_Analysis.R" Readme File
 author: "Indradwip Dutta"
 
-## Script "run_Analysis.R" Readme File
+#### the document explains how the "run_Analysis.R" script has been built up from the different available Datasets
 
-### the document explains how the "run_Analysis.R" script has been built up from the different available Datasets
+#### note:plyr package is a prerequisite and please run 
+#### install.packages("plyr") for running the code "run_analysis.R"
 
-These available datasets include the following:
+
+#### The primary Datasets of interest for this assignment are
+
+
+#### 1.X_test.txt.....................derived data/function values for the subjects
+#### 2.Y_test.txt.....................activity code(1 to 6) for test volunteers(subjects)
+#### 3.subject_test.txt.....................for test data Set
+#### 4.X_train.txt.....................derived data/function values for the subjects
+#### 5.Y_train.txt.....................activity code(1 to 6) for training volunteers(subjects)
+#### 6.subject_train.txt.....................for training data Set
+
+#### 7."activity_labesl.txt".....................The detailed labels of the activity codes 
+#### 8."features.txt"........................these are the functions which have processed the original inertial signals and are the initial column names of combined dtataset
+
+###  For a background of these datasets please refer to Appendix of Data Sets' Background below
+
+### -------------------------------------------PART1-----------------------------------------------
+
+### In the "run_analysis.R" script,the data for Test and Training has been combined as below
+
+
+1. The test data has been combined to form a Dataset as below.
+
+#### "testData"<- [data.table read ("subject_test.txt"),data.table read ("Y_test.txt"),data.table read ("X_test.txt")]
+
+
+2. The training data has been combined to form a Dataset as below.
+
+#### "trainData"<- [data.table read ("subject_train.txt"),data.table read ("Y_train.txt"),data.table read ("X_train.txt")]
+
+
+
+3. Finally the test and training data has been combined to form a Dataset as below.
+
+#### "combiDataset"<-[testData,trainData]
+
+
+### -------------------------------------------PART2-------------------------------------------------
+
+4. However,the Combined dataset as mentioned above was sub set with only the variables that calculate the mean() and the standard deviation,std() of the raw signals.The Variable Dataset that holds this new dataset is called, 
+
+#### "subCombiData"<-subset of "combiDataset" [columns with mean(),columns with std()]
+
+### -------------------------------------------PART3-------------------------------------------------
+
+5. Further,the dataset "subCombiData" has the activity column values denoted as Activity Code.This has to be changed to actual activity itself
+This combined Dataset has the activities denoted as 1,2,3,4,5,6 which are codes for the activities as below.
+
+    
+                    1   WALKING
+                    2   WALKING_UPSTAIRS
+                    3   WALKING_DOWNSTAIRS
+                    4   SITTING
+                    5   STANDING
+                    6   LAYING
+
+#### "subCombiData"<-[ change the columns "Activity" values from levels 1....6 to WALKING.........LAYING ]
+
+### -------------------------------------------PART4-------------------------------------------------
+
+6. Further as the column names of the final dataset is still the functions that have derived these columns from raw signals,the function names has to be denoted  with fully explained and expanded annotation.Usually 
+    
+                  t=time series Data or functions working on time series data
+    
+                  f=frequency series data or functions working on frequency series data
+    
+  this has to be changed to time and frequency,i.e replace t by time and f by frequency in the column names.
+    
+After doing this the final Dataset which is in the variable columns modified 
+
+#### "subCombiData" <-[ change the column names with proper full annotations,t(replace by time) and f(replace by frequency) ]
+
+### -------------------------------------------PART5-------------------------------------------------
+
+
+7. The subcombiData has furher been aggregated by Subject(volunteers) and then by their individual activities.The final tidy data has been collected in the dataframe variable,
+
+#### "freshCombiData"<-aggregate "subCombiData"[by Subject(volunteers) and then by their individual activities]
+
+## freshCombiData variable is the final data set generated within the code "run_analysis.R" of the assignment
+
+### the dataset freshCombidata has been output to a text file "tidydata.txt" that has been stored in the working directory and also uploaded in this project repo
+
+### ___________________________________________________________________________________________________________________________________________
+
+##  Appendix Data Sets' Background
+
+
+
+#### The available datasets include the following:
 
 #### 1.The Raw inertial signals taken for every volunteer(subject) participating in the data collection exercise of human activities.The signals are collected at a sampling size of 128 signals per record at 50 HZ frequency.These signals are present in the datasets as below
                   
@@ -59,16 +150,23 @@ Datasets in y and Z direction exists for all the subjects(Subject ID or voluntee
 #### 2.The Derived Variables,derived from the raw signals above by applying the 561 listed functions
 
 
-#### However these Datasets as mentioned above have been used to derive further Datasets called 
+#### These Datasets as mentioned above have been used to derive further Datasets called 
 
-#####     1.X_test.txt
-#####     2.Y_test.txt
-#####     3.X_train.txt
-#####     4.Y_train.txt
+#### 1.X_test.txt.....................derived data/function values for the subjects
+#### 2.Y_test.txt.....................activity code(1 to 6) for test volunteers(subjects)
+#### 3.subject_test.txt.....................for test data Set
+#### 4.X_train.txt.....................derived data/function values for the subjects
+#### 5.Y_train.txt.....................activity code(1 to 6) for training volunteers(subjects)
+#### 6.subject_train.txt.....................for training data Set
+#### 7."activity_labesl.txt"--------contains the actual Label of the activities performed by the subjects
+                        1 WALKING
+                        2 WALKING_UPSTAIRS
+                        3 WALKING_DOWNSTAIRS
+                        4 SITTING
+                        5 STANDING
+                        6 LAYING
+#### 8."features.txt"........................these are the functions which have processed the original inertial signals 
 
-
-
-these datasets are our interset in the calculation analysis here.
 The datasets above have been processed per record/subject/activity by using the 561 functions listed in "features.txt"
 
 The 561 functions used to derive the variables in X_test,Y_test,X_train,Y_train Dataset are listed below
@@ -223,70 +321,3 @@ The 561 functions used to derive the variables in X_test,Y_test,X_train,Y_train 
     148 tBodyGyro-arCoeff()-X,3
     149 tBodyGyro-arCoeff()-X,4
     150 tBodyGyro-arCoeff()-Y,1
-    
-
-
-### In the "run_analysis.R" script,the data for Test and Training has been combined as below
-
-#### note:plyr package is a prerequisite and please run 
-#### install.packages("plyr") for running the code "run_analysis.R"
-
-
-1. The test data has been combined to form a Dataset as below.The first two columns are "Subject" and "Activity" respectively and the rest are all the calculations derived from 561 functions mentioned above.This variable dataset that holds this is called 
-
-#### "testData"
-
-
-
-2. The training data has been combined to form a Dataset as below.The first two columns are "Subject" and "Activity" respectively respectively and the rest are all the calculations derived from 561 functions mentioned above.This variable dataset that holds this is called 
-
-#### "trainData"
-
-
-
-
-3. Finally the test and training data has been combined to form a Dataset as below.This variable dataset that hols this is called 
-
-#### "combiDataset"
-
-
-
-4. However,the Combined dataset as mentioned above was sub set with only the variables that calculate the mean() and the standard deviation,std() of the raw signals.The Variable Dataset that holds this new dataset is called, 
-
-#### "subCombiData"
-
-
-5. Further,the dataset "subCombiData" has the activity column values denoted as Activity Code.This has to be changed to actual activity itself
-This combined Dataset has the activities denoted as 1,2,3,4,5,6 which are codes for the activities as below.
-
-    
-                    1   WALKING
-                    2   WALKING_UPSTAIRS
-                    3   WALKING_DOWNSTAIRS
-                    4   SITTING
-                    5   STANDING
-                    6   LAYING
-
-
-
-6. Further as the column names of the final dataset is still the functions that have derived these columns from raw signals,the function names has to be denoted  with fully explained and expanded annotation.Usually 
-    
-                  t=time series Data or functions working on time series data
-    
-                  f=frequency series data or functions working on frequency series data
-    
-  this has to be changed to time and frequency,i.e replace t by time and f by frequency in the column names.
-    
-After doing this the final Dataset which is in the variable columns modified 
-
-#### "subCombiData" 
-
-
-
-7. The subcombiData has furher been aggregated by Subject(volunteers) and then by their individual activities.The final tidy data has been collected in the dataframe variable,
-
-#### "freshCombiData".
-
-## freshCombiData variable is the final data set generated within the code "run_analysis.R" of the assignment
-
-### the dataset freshCombidata has been output to a text file "tidydata.txt" that has been stored in the working directory and also uploaded in this project repo
