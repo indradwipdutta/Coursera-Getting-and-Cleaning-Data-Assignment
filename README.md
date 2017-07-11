@@ -91,7 +91,7 @@ After doing this the final Dataset which is in the variable columns modified
 
 ### the dataset freshCombidata has been output to a text file "tidydata.txt" that has been stored in the working directory and also uploaded in this project repo
 
-### _____________________________________________________________________________________________________________
+### __________________________________________________________________________________________________
 
 ##  Appendix Data Sets' Background
 
